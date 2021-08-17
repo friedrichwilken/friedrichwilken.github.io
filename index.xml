@@ -18,5 +18,17 @@
 1  func Hallo(s string) {fmt.Printf(&amp;#34;Hello %v&amp;#34;, s)}   </description>
     </item>
     
+    <item>
+      <title>hugo new post</title>
+      <link>http://h.xjj.pub/posts/hugo-new-page/</link>
+      <pubDate>Tue, 17 Aug 2021 10:52:59 +0800</pubDate>
+      
+      <guid>http://h.xjj.pub/posts/hugo-new-page/</guid>
+      <description>First, cd into your page&amp;rsquo;s repo.
+1  cd ~/friedrich/go/src/github.com/friedrichwilken/blog/things/   Now, lets create a new post. I like to have a directory only for posts, so:
+1  hugo new posts/hugo-new-page.md   Your new markdown file will contain some boilderplate code:
+1 2 3 4 5  --- title: &amp;#34;Hugo New Post&amp;#34; date: 2021-08-17T23:42:37+02:00 draft: true ---   It&amp;rsquo;s likely that your theme supports more advanced fields like tags, categories or series.</description>
+    </item>
+    
   </channel>
 </rss>

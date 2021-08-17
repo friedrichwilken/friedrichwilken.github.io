@@ -3,18 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:title" content="Init" />
-<meta property="og:description" content="this is my initial post, here is some inline code and here a code block
-1  func Hallo(s string) {fmt.Printf(&#34;Hello %v&#34;, s)}   " />
+  <meta property="og:title" content="hugo new post" />
+<meta property="og:description" content="how to create a new post" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://h.xjj.pub/posts/init/" />
-<meta property="article:published_time" content="2021-08-17T22:38:02+02:00" />
-<meta property="article:modified_time" content="2021-08-17T22:38:02+02:00" />
+<meta property="og:url" content="http://h.xjj.pub/posts/hugo-new-page/" />
+<meta property="article:published_time" content="2021-08-17T10:52:59+08:00" />
+<meta property="article:modified_time" content="2021-08-17T10:52:59+08:00" />
+
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Init"/>
-<meta name="twitter:description" content="this is my initial post, here is some inline code and here a code block
-1  func Hallo(s string) {fmt.Printf(&#34;Hello %v&#34;, s)}   "/>
+<meta name="twitter:title" content="hugo new post"/>
+<meta name="twitter:description" content="how to create a new post"/>
 
   
 <script type="application/javascript">
@@ -34,7 +33,7 @@ if (!doNotTrack) {
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#262d33">
   <title>
     
-    things friedrich should know - Init
+    things friedrich should know - hugo new post
     
   </title>
   
@@ -84,23 +83,88 @@ if (!doNotTrack) {
   
 
 <main>
-	<h1>Init</h1>
+	<h1>hugo new post</h1>
 	<div class="sm-1 mtb-1">
 		Posted at &mdash; Aug 17, 2021
 		
 	</div>
-	<p></p>
+	<p>how to create a new post</p>
 	<article class="md">
-		<p>this is my initial post, here is some <code>inline</code> code and here a code block</p>
+		<p>First, <code>cd</code> into your page&rsquo;s repo.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">Hallo</span><span class="p">(</span><span class="nx">s</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;Hello %v&#34;</span><span class="p">,</span> <span class="nx">s</span><span class="p">)}</span>
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~/friedrich/go/src/github.com/friedrichwilken/blog/things/
 </code></pre></td></tr></table>
 </div>
+</div><p>Now, lets create a new post. I like to have a directory only for posts, so:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">hugo new posts/hugo-new-page.md
+</code></pre></td></tr></table>
 </div>
+</div><p>Your new markdown file will contain some boilderplate code:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-markdown" data-lang="markdown">  ---
+  title: &#34;Hugo New Post&#34;
+  date: 2021-08-17T23:42:37+02:00
+  draft: true
+  ---
+</code></pre></td></tr></table>
+</div>
+</div><p>It&rsquo;s likely that your theme supports more advanced fields like tags, categories or series. You might find these in the docs or you could just steal them from the theme&rsquo;s example repo (<a href="https://h.xjj.pub/">here is mine</a>):</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-markdown" data-lang="markdown">  ---
+  author: Friedrich Wilken
+  title: hugo new post
+  date: 2021-08-17T10:52:59+08:00
+  description: how to create a new post
+  tags: [ markdown, hugo, ]
+  categories: [ how-to, tech ]
+  series: [hugo]
+  toc: false 
+  draft: false
+  ---
+</code></pre></td></tr></table>
+</div>
+</div><p>Now might be a good moment to start a local server to get a preview of your new post with some nice hot reloading ❤️.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">hugo server
+</code></pre></td></tr></table>
+</div>
+</div><p>Finally, just write some markdown in your lovely new post.</p>
+
 	</article>
 </main>
 

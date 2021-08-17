@@ -1,23 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on things friedrich should know</title>
-    <link>http://h.xjj.pub/posts/</link>
-    <description>Recent content in Posts on things friedrich should know</description>
+    <title>hugo on things friedrich should know</title>
+    <link>http://h.xjj.pub/series/hugo/</link>
+    <description>Recent content in hugo on things friedrich should know</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Tue, 17 Aug 2021 22:38:02 +0200</lastBuildDate><atom:link href="http://h.xjj.pub/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Init</title>
-      <link>http://h.xjj.pub/posts/init/</link>
-      <pubDate>Tue, 17 Aug 2021 22:38:02 +0200</pubDate>
-      
-      <guid>http://h.xjj.pub/posts/init/</guid>
-      <description>this is my initial post, here is some inline code and here a code block
-1  func Hallo(s string) {fmt.Printf(&amp;#34;Hello %v&amp;#34;, s)}   </description>
-    </item>
-    
+    <lastBuildDate>Tue, 17 Aug 2021 10:52:59 +0800</lastBuildDate><atom:link href="http://h.xjj.pub/series/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>hugo new post</title>
       <link>http://h.xjj.pub/posts/hugo-new-page/</link>
