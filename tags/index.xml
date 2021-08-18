@@ -7,7 +7,34 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright notice</copyright>
-    <lastBuildDate>Tue, 17 Aug 2021 10:52:59 +0800</lastBuildDate><atom:link href="http://h.xjj.pub/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 Aug 2021 19:23:35 +0200</lastBuildDate><atom:link href="http://h.xjj.pub/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>provisioning</title>
+      <link>http://h.xjj.pub/tags/provisioning/</link>
+      <pubDate>Wed, 18 Aug 2021 19:23:35 +0200</pubDate>
+      
+      <guid>http://h.xjj.pub/tags/provisioning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vagrant</title>
+      <link>http://h.xjj.pub/tags/vagrant/</link>
+      <pubDate>Wed, 18 Aug 2021 19:23:35 +0200</pubDate>
+      
+      <guid>http://h.xjj.pub/tags/vagrant/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vm</title>
+      <link>http://h.xjj.pub/tags/vm/</link>
+      <pubDate>Wed, 18 Aug 2021 19:23:35 +0200</pubDate>
+      
+      <guid>http://h.xjj.pub/tags/vm/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>hugo</title>
       <link>http://h.xjj.pub/tags/hugo/</link>

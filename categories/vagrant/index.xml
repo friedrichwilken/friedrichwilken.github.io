@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vagrant on things friedrich should know</title>
+    <link>http://h.xjj.pub/categories/vagrant/</link>
+    <description>Recent content in vagrant on things friedrich should know</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Copyright notice</copyright>
+    <lastBuildDate>Wed, 18 Aug 2021 19:23:35 +0200</lastBuildDate><atom:link href="http://h.xjj.pub/categories/vagrant/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lets Build Windows Boxes</title>
+      <link>http://h.xjj.pub/posts/lets-build-windows/</link>
+      <pubDate>Wed, 18 Aug 2021 19:23:35 +0200</pubDate>
+      
+      <guid>http://h.xjj.pub/posts/lets-build-windows/</guid>
+      <description>F&#39; it, I build my own windows server image (, to save time provisioning VMs).
+First I forked Stefan Scherers AWESOME packer-windows repo and git cloned it to my local machine.
+We used Stefan&amp;rsquo;s windows_2019 and windows_2019_docker vagrant boxes in the past, so I copied the build_windows_2019_docker.sh and .json and renamed them to windows_2019_core_kubernetes.
+Next, I downloaded the windows server 2019 essential eval image from microsoft.
+In the .sh I changed these three lines (the iso_url to the image I just downloaded.</description>
+    </item>
+    
+  </channel>
+</rss>

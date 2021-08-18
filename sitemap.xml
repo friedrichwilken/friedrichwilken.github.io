@@ -3,23 +3,73 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://h.xjj.pub/posts/init/</loc>
-    <lastmod>2021-08-17T22:38:02+02:00</lastmod>
+    <loc>http://h.xjj.pub/categories/</loc>
+    <lastmod>2021-08-18T19:23:35+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://h.xjj.pub/posts/lets-build-windows/</loc>
+    <lastmod>2021-08-18T19:23:35+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://h.xjj.pub/categories/packer/</loc>
+    <lastmod>2021-08-18T19:23:35+02:00</lastmod>
   </url>
   
   <url>
     <loc>http://h.xjj.pub/posts/</loc>
-    <lastmod>2021-08-17T22:38:02+02:00</lastmod>
+    <lastmod>2021-08-18T19:23:35+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://h.xjj.pub/tags/provisioning/</loc>
+    <lastmod>2021-08-18T19:23:35+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://h.xjj.pub/series/</loc>
+    <lastmod>2021-08-18T19:23:35+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://h.xjj.pub/tags/</loc>
+    <lastmod>2021-08-18T19:23:35+02:00</lastmod>
   </url>
   
   <url>
     <loc>http://h.xjj.pub/</loc>
-    <lastmod>2021-08-17T22:38:02+02:00</lastmod>
+    <lastmod>2021-08-18T19:23:35+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://h.xjj.pub/categories/</loc>
-    <lastmod>2021-08-17T10:52:59+08:00</lastmod>
+    <loc>http://h.xjj.pub/tags/vagrant/</loc>
+    <lastmod>2021-08-18T19:23:35+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://h.xjj.pub/categories/vagrant/</loc>
+    <lastmod>2021-08-18T19:23:35+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://h.xjj.pub/tags/vm/</loc>
+    <lastmod>2021-08-18T19:23:35+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://h.xjj.pub/categories/vm/</loc>
+    <lastmod>2021-08-18T19:23:35+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://h.xjj.pub/series/win-packer/</loc>
+    <lastmod>2021-08-18T19:23:35+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://h.xjj.pub/posts/init/</loc>
+    <lastmod>2021-08-17T22:38:02+02:00</lastmod>
   </url>
   
   <url>
@@ -44,16 +94,6 @@
   
   <url>
     <loc>http://h.xjj.pub/tags/markdown/</loc>
-    <lastmod>2021-08-17T10:52:59+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://h.xjj.pub/series/</loc>
-    <lastmod>2021-08-17T10:52:59+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://h.xjj.pub/tags/</loc>
     <lastmod>2021-08-17T10:52:59+08:00</lastmod>
   </url>
   

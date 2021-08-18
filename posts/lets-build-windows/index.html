@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Lets Build Windows Boxes" />
+<meta property="og:description" content="how to create a new post" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://h.xjj.pub/posts/lets-build-windows/" />
+<meta property="article:published_time" content="2021-08-18T19:23:35+02:00" />
+<meta property="article:modified_time" content="2021-08-18T19:23:35+02:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Lets Build Windows Boxes"/>
+<meta name="twitter:description" content="how to create a new post"/>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'friedrich wilken', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#262d33">
+  <title>
+    
+    things friedrich should know - Lets Build Windows Boxes
+    
+  </title>
+  
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/normalize.css">
+  
+  
+  
+  <link rel="stylesheet" href="/minima.1629326016.css">
+
+  <script src="/js/main.js"></script>
+</head>
+<script>
+  try {
+    if (!('theme' in localStorage)) {
+      localStorage.theme = window.matchMedia('(prefer-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    document.querySelector('html').classList.add(localStorage.theme);
+  } catch (e) {
+    console.error(e);
+  }
+</script>
+<body>
+  <header>
+  <h1 class="row gap-1 nowrap">
+    <div id="theme-switcher" class="btn lg-1"></div>
+    things friedrich should know
+  </h1>
+  <nav class="row gap-1">
+  
+    <a href="/">Home</a>
+  
+    <a href="/categories">Categories</a>
+  
+    <a href="/series">Series</a>
+  
+    <a href="/about">About</a>
+  
+  </nav>
+  <hr>
+</header>
+  
+  
+
+<main>
+	<h1>Lets Build Windows Boxes</h1>
+	<div class="sm-1 mtb-1">
+		Posted at &mdash; Aug 18, 2021
+		
+	</div>
+	<p>how to create a new post</p>
+	<article class="md">
+		<p>F' it, I build my own windows server image (, to save time provisioning VMs).</p>
+<p>First I forked <a href="https://github.com/StefanScherer/packer-windows">Stefan Scherers AWESOME packer-windows repo</a> and <code>git clone</code>d it to my local machine.</p>
+<p><a href="https://github.com/kubernetes-sigs/sig-windows-dev-tools">We</a> used Stefan&rsquo;s <code>windows_2019</code> and <code>windows_2019_docker</code> vagrant boxes in the past, so I copied the <code>build_windows_2019_docker.sh</code> and <code>.json</code> and renamed them to <code>windows_2019_core_kubernetes</code>.</p>
+<p>Next, I downloaded the <em>windows server 2019 essential eval</em> image from microsoft.</p>
+<p>In the <code>.sh</code> I changed these three lines (the <code>iso_url</code> to the image I just downloaded.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">...
+  --only<span class="o">=</span>virtualbox-iso <span class="se">\
+</span><span class="se"></span>  --var <span class="nv">autounattend</span><span class="o">=</span>./answer_files/2019_core/Autounattend.xml <span class="se">\
+</span><span class="se"></span>  --var <span class="nv">iso_url</span><span class="o">=</span>~/Downloads/my.iso <span class="se">\
+</span><span class="se"></span> windows_2019_core_kubernetes.json
+</code></pre></td></tr></table>
+</div>
+</div><p>I have no clue right now why the orginal file was pointing to <code>./tmp/2019_core/Autounattend.xml</code> but since I got an error and could find the file localy, I just changed it.</p>
+<p><code>--only=vmware-iso</code> caused trouble on my system because I do not have the needed bins, even though I installed VMWare Workstation. This looks to be a common problem on linux and I will look into it later.</p>
+<p>In the <code>.json</code> I added this <code>openssh.ps1</code>-script that I found in the repo to test how mess around with packer and because we need ssh anyhow.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json">    <span class="err">...</span>
+    <span class="p">{</span>
+      <span class="nt">&#34;scripts&#34;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&#34;./scripts/vm-guest-tools.ps1&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;./scripts/debloat-windows.ps1&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;./scripts/docker/set-winrm-automatic.ps1&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;./scripts/openssh.ps1&#34;</span>
+      <span class="p">],</span>
+      <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;powershell&#34;</span>
+    <span class="p">}</span><span class="err">,</span>
+    <span class="err">...</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>and this from:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="s2">&#34;post-processors&#34;</span><span class="err">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&#34;keep_input_artifact&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&#34;output&#34;</span><span class="p">:</span> <span class="s2">&#34;windows_2019_docker_{{.Provider}}.box&#34;</span><span class="p">,</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>to</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json">      <span class="s2">&#34;output&#34;</span><span class="err">:</span> <span class="s2">&#34;windows_2019_k8s_{{.Provider}}.box&#34;</span><span class="err">,</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>I gave it a try:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">./windows_2019_core_kubernetes
+</code></pre></td></tr></table>
+</div>
+</div><p>But I got impatient with all the docker stuff. I first wanted to not touch it to not break anything. But I delted all these lines:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+      <span class="nt">&#34;environment_vars&#34;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&#34;docker_images={{user `docker_images`}}&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;docker_provider={{user `docker_provider`}}&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;docker_version={{user `docker_version`}}&#34;</span>
+      <span class="p">],</span>
+      <span class="nt">&#34;scripts&#34;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&#34;./scripts/docker/add-docker-group.ps1&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;./scripts/docker/install-docker.ps1&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;./scripts/docker/docker-pull.ps1&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;./scripts/wait-for-tiworker.ps1&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;./scripts/docker/open-docker-insecure-port.ps1&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;./scripts/docker/open-docker-swarm-ports.ps1&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;./scripts/docker/remove-docker-key-json.ps1&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;./scripts/docker/disable-windows-defender.ps1&#34;</span>
+      <span class="p">],</span>
+      <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;powershell&#34;</span>
+    <span class="p">}</span><span class="err">,</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Again I ran</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">./windows_2019_core_kubernetes
+</code></pre></td></tr></table>
+</div>
+</div><p>And got a nice <em>little</em> vagrant box!</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">==</span>&gt; Wait completed after <span class="m">53</span> minutes <span class="m">23</span> <span class="nv">seconds</span>
+
+<span class="o">==</span>&gt; Builds finished. The artifacts of successful builds are:
+--&gt; virtualbox-iso: <span class="s1">&#39;virtualbox&#39;</span> provider box: windows_2019_k8s_virtualbox.box
+</code></pre></td></tr></table>
+</div>
+</div><p>So, I added this to vagrant</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">vagrant box add killme 
+</code></pre></td></tr></table>
+</div>
+</div><p>(I name stuff killme so I later know it&rsquo;s okay to delete it.)</p>
+<p>I created a new dir and in there I inited a new Vagrantfile</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">vagrant init killme
+</code></pre></td></tr></table>
+</div>
+</div><p>and started it</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">vagrant up
+</code></pre></td></tr></table>
+</div>
+</div><p>and ssh&rsquo;ed successful in there</p>
+<pre><code>vagrant ssh default
+</code></pre><p>Cool, but this was only the proof that this works. Here is my todo list:</p>
+<ul>
+<li>no more need to enter a password when ssh&rsquo;ing into the box</li>
+<li>automatically start powershell when ssh&rsquo;ing in (<a href="https://www.vagrantup.com/docs/vagrantfile/winssh_settings">this might help</a>)</li>
+<li>install choco; I think the repo already contains a script that I can just paste in the <code>.json</code>.</li>
+<li>create a little choco &ldquo;wish list&rdquo;: neovim, &hellip;</li>
+<li>move all the scripts from <a href="https://github.com/kubernetes-sigs/sig-windows-dev-tools">sig windows dev tools</a> over here</li>
+</ul>
+
+	</article>
+</main>
+
+
+
+
+
+
+
+
+  <footer class="row row-mob al-c-mob col-rev-mob sm-2-mob jc-bt mtb-2">
+  <p class="c-tag">
+    © Copyright notice |
+    <a href="https://github.com/mivinci/hugo-theme-minima" target="_blank" rel="noopener noreferrer">Minima</a> on
+    <a href="https://gohugo.io" target="_blank" rel="noopener noreferrer">Hugo</a>
+  </p>
+  <p class="row gap-0_5">
+    
+      <a class="icon" href="https://github.com/friedrichwilken" title="github">
+      
+        <svg fill="#63636f" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      
+      </a>
+    
+      <a class="icon" href="https://www.linkedin.com/in/jens-friedrich-wilken-34643b198/" title="linkedin">
+      
+        <svg fill="#0073b1" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      
+      </a>
+    
+      <a class="icon" href="https://twitter.com/friedrichwilken" title="twitter">
+      
+        <svg fill="#1da1f2" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Twitter</title><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"/></svg>
+      
+      </a>
+    
+  </p>
+</footer>
+</body>
+</html>
