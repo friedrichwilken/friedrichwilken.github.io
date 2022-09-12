@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Tags on hackyfriedrich</title>
-    <link>https://hackyfriedrich.github.io/tags/</link>
-    <description>Recent content in Tags on hackyfriedrich</description>
+    <title>Tags on friedrichwilken</title>
+    <link>https://friedrichwilken.github.io/tags/</link>
+    <description>Recent content in Tags on friedrichwilken</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 15 Sep 2020 11:30:03 +0000</lastBuildDate><atom:link href="https://hackyfriedrich.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Sep 2022 10:00:00 +0000</lastBuildDate><atom:link href="https://friedrichwilken.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>blog</title>
-      <link>https://hackyfriedrich.github.io/tags/blog/</link>
-      <pubDate>Tue, 15 Sep 2020 11:30:03 +0000</pubDate>
+      <link>https://friedrichwilken.github.io/tags/blog/</link>
+      <pubDate>Mon, 12 Sep 2022 10:00:00 +0000</pubDate>
       
-      <guid>https://hackyfriedrich.github.io/tags/blog/</guid>
+      <guid>https://friedrichwilken.github.io/tags/blog/</guid>
       <description></description>
     </item>
     
     <item>
       <title>go</title>
-      <link>https://hackyfriedrich.github.io/tags/go/</link>
-      <pubDate>Tue, 15 Sep 2020 11:30:03 +0000</pubDate>
+      <link>https://friedrichwilken.github.io/tags/go/</link>
+      <pubDate>Mon, 12 Sep 2022 10:00:00 +0000</pubDate>
       
-      <guid>https://hackyfriedrich.github.io/tags/go/</guid>
+      <guid>https://friedrichwilken.github.io/tags/go/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hugo</title>
-      <link>https://hackyfriedrich.github.io/tags/hugo/</link>
-      <pubDate>Tue, 15 Sep 2020 11:30:03 +0000</pubDate>
+      <link>https://friedrichwilken.github.io/tags/hugo/</link>
+      <pubDate>Mon, 12 Sep 2022 10:00:00 +0000</pubDate>
       
-      <guid>https://hackyfriedrich.github.io/tags/hugo/</guid>
+      <guid>https://friedrichwilken.github.io/tags/hugo/</guid>
       <description></description>
     </item>
     

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>hackyfriedrich</title>
-    <link>https://hackyfriedrich.github.io/</link>
-    <description>Recent content on hackyfriedrich</description>
+    <title>friedrichwilken</title>
+    <link>https://friedrichwilken.github.io/</link>
+    <description>Recent content on friedrichwilken</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 15 Sep 2020 11:30:03 +0000</lastBuildDate><atom:link href="https://hackyfriedrich.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Sep 2022 10:00:00 +0000</lastBuildDate><atom:link href="https://friedrichwilken.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>how I created this blog</title>
-      <link>https://hackyfriedrich.github.io/posts/this_blog/</link>
-      <pubDate>Tue, 15 Sep 2020 11:30:03 +0000</pubDate>
+      <title>How I created this blog</title>
+      <link>https://friedrichwilken.github.io/posts/how_i_created_this_blog/</link>
+      <pubDate>Mon, 12 Sep 2022 10:00:00 +0000</pubDate>
       
-      <guid>https://hackyfriedrich.github.io/posts/this_blog/</guid>
-      <description>a brief overview on how I created this blog</description>
+      <guid>https://friedrichwilken.github.io/posts/how_i_created_this_blog/</guid>
+      <description>Desc Text.</description>
     </item>
     
   </channel>
