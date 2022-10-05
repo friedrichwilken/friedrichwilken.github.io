@@ -6,14 +6,23 @@
     <description>Recent content on friedrichwilken</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Sep 2022 10:00:00 +0000</lastBuildDate><atom:link href="https://friedrichwilken.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Sep 2022 11:30:03 +0000</lastBuildDate><atom:link href="https://friedrichwilken.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>how to create a new post in hugo</title>
+      <link>https://friedrichwilken.github.io/posts/how_to_post/</link>
+      <pubDate>Thu, 15 Sep 2022 11:30:03 +0000</pubDate>
+      
+      <guid>https://friedrichwilken.github.io/posts/how_to_post/</guid>
+      <description>super short, how I create another blog pos</description>
+    </item>
+    
     <item>
       <title>How I created this blog</title>
       <link>https://friedrichwilken.github.io/posts/how_i_created_this_blog/</link>
       <pubDate>Mon, 12 Sep 2022 10:00:00 +0000</pubDate>
       
       <guid>https://friedrichwilken.github.io/posts/how_i_created_this_blog/</guid>
-      <description>Desc Text.</description>
+      <description>quick overview on was done to create this blog</description>
     </item>
     
   </channel>
