@@ -7,7 +7,7 @@
 <meta name="robots" content="index, follow">
 <title>how to create a new post in hugo | friedrichwilken</title>
 <meta name="keywords" content="go, blog, hugo">
-<meta name="description" content="super short, how I create another blog pos">
+<meta name="description" content="super short, how I create another blog post">
 <meta name="author" content="Friedrich">
 <link rel="canonical" href="https://friedrichwilken.github.io">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bc1149f4a72aa4858d3a9f71462f75e5884ffe8073ea9d6d5761d5663d651e20.css" integrity="sha256-vBFJ9KcqpIWNOp9xRi915YhP/oBz6p1tV2HVZj1lHiA=" rel="preload stylesheet" as="style">
@@ -57,15 +57,15 @@
 
     </style>
 </noscript><meta property="og:title" content="how to create a new post in hugo" />
-<meta property="og:description" content="super short, how I create another blog pos" />
+<meta property="og:description" content="super short, how I create another blog post" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://friedrichwilken.github.io/posts/how_to_post/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-09-15T11:30:03+00:00" />
-<meta property="article:modified_time" content="2022-09-15T11:30:03+00:00" /><meta property="og:site_name" content="ExampleSite" />
+<meta property="article:published_time" content="2022-10-05T18:00:00+00:00" />
+<meta property="article:modified_time" content="2022-10-05T18:00:00+00:00" /><meta property="og:site_name" content="ExampleSite" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="how to create a new post in hugo"/>
-<meta name="twitter:description" content="super short, how I create another blog pos"/>
+<meta name="twitter:description" content="super short, how I create another blog post"/>
 
 
 <script type="application/ld+json">
@@ -94,15 +94,15 @@
   "@type": "BlogPosting",
   "headline": "how to create a new post in hugo",
   "name": "how to create a new post in hugo",
-  "description": "super short, how I create another blog pos",
+  "description": "super short, how I create another blog post",
   "keywords": [
     "go", "blog", "hugo"
   ],
-  "articleBody": "To create a new blog post I run:\nhugo new --kind post posts/.md (I created a template dubbed post. This is why I can use --kind post. Templates are called archetypes in hugo and so you can find the template under /archetype.) Then I edit my post, commit and push its changes. After that I run hugo -t PaperMod where PaperMod is my theme. This will render all the actual html files that really make the blog. Note: Hugo is, sorry, blazingly fast. Now I cd into /public, the git submodule of my actual blog, and commit and push the changes here as well.\n",
-  "wordCount" : "108",
+  "articleBody": "To create a new blog post I run:\nhugo new --kind post posts/.md (I created a template dubbed post. This is why I can use --kind post. Templates are called archetypes in hugo and so you can find the template under /archetype.) Then I edit my post, commit and push it’s changes. Now I run\nhugo -t PaperMod where PaperMod is the name of my theme. This will render the html files to /public. I cd to /public, commit and push the changes to the submodul, that really is my actual blog. Boom.\n",
+  "wordCount" : "97",
   "inLanguage": "en",
-  "datePublished": "2022-09-15T11:30:03Z",
-  "dateModified": "2022-09-15T11:30:03Z",
+  "datePublished": "2022-10-05T18:00:00Z",
+  "dateModified": "2022-10-05T18:00:00Z",
   "author":{
     "@type": "Person",
     "name": "Friedrich"
@@ -187,17 +187,18 @@
       how to create a new post in hugo
     </h1>
     <div class="post-description">
-      super short, how I create another blog pos
+      super short, how I create another blog post
     </div>
   </header> 
   <div class="post-content"><p>To create a new blog post I run:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo new --kind post posts/&lt;name of my new post&gt;.md
 </span></span></code></pre></div><p>(I created a template dubbed <em>post</em>. This is why I can use <code>--kind post</code>. Templates are called <code>archetypes</code> in hugo and so you can find the template under <code>/archetype</code>.)
-Then I edit my post, commit and push its changes.
-After that I run
-<code>hugo -t PaperMod</code>
-where PaperMod is my theme. This will render all the actual html files that really make the blog. Note: Hugo is, sorry, blazingly fast.
-Now I <code>cd</code> into <code>/public</code>, the git submodule of my actual blog, and commit and push the changes here as well.</p>
+Then I edit my post, commit and push it&rsquo;s changes.
+Now I run</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo -t PaperMod
+</span></span></code></pre></div><p>where <code>PaperMod</code> is the name of my theme. This will render the html files to <code>/public</code>.
+I <code>cd</code> to <code>/public</code>, commit and push the changes to the submodul, that really is my actual blog.
+Boom.</p>
 
 
   </div>
