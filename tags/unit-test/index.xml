@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>unit-test on friedrichwilken</title>
+    <link>https://friedrichwilken.github.io/tags/unit-test/</link>
+    <description>Recent content in unit-test on friedrichwilken</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 05 Oct 2022 23:00:00 +0000</lastBuildDate><atom:link href="https://friedrichwilken.github.io/tags/unit-test/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Summary: Unit Testing: Principles, Practices and Patterns. Pt. 1</title>
+      <link>https://friedrichwilken.github.io/posts/summary_unit_test_ppp_pt1/</link>
+      <pubDate>Wed, 05 Oct 2022 23:00:00 +0000</pubDate>
+      
+      <guid>https://friedrichwilken.github.io/posts/summary_unit_test_ppp_pt1/</guid>
+      <description>My summary of the book on unit tests from Vladimir Khorikov</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,7 +6,16 @@
     <description>Recent content on friedrichwilken</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Oct 2022 18:00:00 +0000</lastBuildDate><atom:link href="https://friedrichwilken.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 05 Oct 2022 23:00:00 +0000</lastBuildDate><atom:link href="https://friedrichwilken.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Summary: Unit Testing: Principles, Practices and Patterns. Pt. 1</title>
+      <link>https://friedrichwilken.github.io/posts/summary_unit_test_ppp_pt1/</link>
+      <pubDate>Wed, 05 Oct 2022 23:00:00 +0000</pubDate>
+      
+      <guid>https://friedrichwilken.github.io/posts/summary_unit_test_ppp_pt1/</guid>
+      <description>My summary of the book on unit tests from Vladimir Khorikov</description>
+    </item>
+    
     <item>
       <title>how to create a new post in hugo</title>
       <link>https://friedrichwilken.github.io/posts/how_to_post/</link>
